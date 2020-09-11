@@ -18,8 +18,8 @@ exports.up = function(knex) {
   })
   .createTable('steps', tbl=>{
       tbl.increment().unsigned().notNullable();
-      tbl.integer('recipie_id').unsigned().notNullable().references('id').inTable('recipes').onUpdate('RESTRICT').onDelete('RESTRICT');
-      tbl.integer().unsigned().notNullable();
+      tbl.integer('recipe_id').unsigned().notNullable().references('id').inTable('recipes').onUpdate('RESTRICT').onDelete('RESTRICT');
+      tbl.integer('step_number').unsigned().notNullable();
       tbl.text('instructions', 128).notNullable();
   })
 };
